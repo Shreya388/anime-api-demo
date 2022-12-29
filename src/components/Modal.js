@@ -27,8 +27,8 @@ function Modal({ id, closeModal }) {
             <div className="model-container">
                 <button className="btn close-btn" onClick={() => closeModal()}> X </button>
                 <div className="container mt-4 box-content">
-                    <img src={data?.images?.jpg?.image_url} />
-                    <h1 className="mt-4">{data?.title}</h1>
+                    <img src={data?.images?.jpg?.image_url} height="100px" />
+                    <h1 className="mt-2">{data?.title}</h1>
                     <b><p className="navbar-brand">{data?.type}</p></b>
                     <p className="navbar-brand">{data?.source}</p>
                     <p>{data?.synopsis}</p>

@@ -56,13 +56,13 @@ input:focus{
 .Modal{
   background-color: rgb(0, 0, 0);
   padding: 100px 0;
-  bottom: 0;
   left:0;
   right: 0;
   top: 0;
   padding: 30px 40px;
   position: fixed;
   color: white;
+  height: 1000px;
 }
 
 .close-btn{
