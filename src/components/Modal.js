@@ -1,12 +1,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Container } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
+import { AiOutlineCloseCircle } from 'react-icons/ai';
 import "../App.css";
 
 function Modal({ id, closeModal }) {
 
-    const [query, setQuery] = useState("");
-    const [list, setList] = useState([]);
+    
     const [data, setData] = useState({})
 
     const getData = async () => {
@@ -25,13 +25,26 @@ function Modal({ id, closeModal }) {
     return(
         <div className="Modal">
             <div className="model-container">
-                <button className="btn close-btn" onClick={() => closeModal()}> X </button>
+                <button className="btn close-btn" onClick={() => closeModal()}> <AiOutlineCloseCircle /> </button>
                 <div className="container mt-4 box-content">
-                    <img src={data?.images?.jpg?.image_url} height="100px" />
-                    <h1 className="mt-2">{data?.title}</h1>
+                  <div className="container">
+                  <Row>
+                    <Col lg={4} md={12} sm={6}>
+                    <img className="prev-img card-image" src={data?.images?.jpg?.image_url} />
+                    </Col>
+                    <Col lg={1}md={12} sm={1}>
+                    
+                    </Col>
+                    <Col lg={7} md={12} sm={5}>
+                      <div className="text-card mt-4">
+                    <h1 className="mt-4">{data?.title}</h1>
                     <b><p className="navbar-brand">{data?.type}</p></b>
-                    <p className="navbar-brand">{data?.source}</p>
                     <p>{data?.synopsis}</p>
+                    <br />
+                    </div>
+                    </Col>
+                  </Row>
+                  </div>
                 </div>
 
             </div>
